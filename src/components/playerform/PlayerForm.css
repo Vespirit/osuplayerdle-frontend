@@ -1,0 +1,22 @@
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+}
+
+.dropdown-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-option {
+    padding: 2px;
+    background-color: #413f3f;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+}
