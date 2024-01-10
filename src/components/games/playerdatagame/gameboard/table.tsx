@@ -1,3 +1,5 @@
+import "./table.css";
+
 // components
 import Row from "./row";
 //types
@@ -10,7 +12,10 @@ type Props = {
 function Table({ guessProps, guessHints }: Props) {
     return (
         <center>
-            <table width="100%">
+            <table
+                className="table"
+                width="100%"
+            >
                 <thead>
                     <tr>
                         <td>Guess</td>
