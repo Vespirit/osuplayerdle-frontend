@@ -1,22 +1,17 @@
-.dropdown-container {
-    position: relative;
+.textbox {
+    margin-right: 5px;
 }
-
-.dropdown {
-    position: absolute;
+.dropdown-options {
+    position: relative;
     top: 100%;
     left: 0;
     width: 100%;
-}
-
-.dropdown-options {
     display: flex;
     flex-direction: column;
 }
 
 .dropdown-option {
     padding: 2px;
-    background-color: #413f3f;
     border: 1px solid #ffffff;
     cursor: pointer;
 }

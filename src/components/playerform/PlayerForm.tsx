@@ -41,32 +41,33 @@ function PlayerForm({ inputOptions, onSubmit }: Props) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div className="dropdown-container">
-                <input
-                    type="text"
-                    placeholder="Guess a player!"
-                    value={inputText}
-                    onChange={handleInputChange}
-                />
-                <div className="dropdown">
-                    {isDropdownOpen && (
-                        <div className="dropdown-options">
-                            {inputOptionsFiltered.map((option) => (
-                                <button
-                                    key={option}
-                                    className="dropdown-option"
-                                    onClick={() => handleOptionClick(option)}
-                                >
-                                    {option}
-                                </button>
-                            ))}
-                        </div>
-                    )}
+            <input
+                className="textbox"
+                name="input-player"
+                type="text"
+                placeholder="Type a player's name!"
+                value={inputText}
+                onChange={handleInputChange}
+            />
+            <button
+                className="submit"
+                type="submit"
+            >
+                Guess!
+            </button>
+            {isDropdownOpen && (
+                <div className="dropdown-options">
+                    {inputOptionsFiltered.map((option) => (
+                        <button
+                            key={option}
+                            className="dropdown-option"
+                            onClick={() => handleOptionClick(option)}
+                        >
+                            {option}
+                        </button>
+                    ))}
                 </div>
-            </div>
-            <div>
-                <button type="submit">Guess!</button>
-            </div>
+            )}
         </form>
     );
 }
