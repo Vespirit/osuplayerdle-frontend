@@ -2,6 +2,7 @@
     margin-right: 5px;
 }
 .dropdown-options {
+    margin-top: 5px;
     position: relative;
     top: 100%;
     left: 0;
@@ -12,6 +13,6 @@
 
 .dropdown-option {
     padding: 2px;
-    border: 1px solid #ffffff;
+    border: 1px solid #666666;
     cursor: pointer;
 }
