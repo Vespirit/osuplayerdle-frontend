@@ -33,16 +33,12 @@ function PlayerDataGame() {
     const [shareConfirmation, setShareConfirmation] = useState<string>("");
 
     const fetchPlayer = async (username: string) => {
-        const res: AxiosResponse = await axios.get(
-            `http://localhost:3001/players/${username}`
-        );
+        const res: AxiosResponse = await axios.get(`/api/players/${username}`);
         return res.data[0];
     };
 
     const fetchPlayers = async () => {
-        const res: AxiosResponse = await axios.get(
-            "http://localhost:3001/players"
-        );
+        const res: AxiosResponse = await axios.get("/api/players");
         return res.data;
     };
 
@@ -53,7 +49,7 @@ function PlayerDataGame() {
                 0,
                 usernameList.length,
                 startOfToday().getTime()
-            );
+            ); // choose a solution out of the username list
             setSolution(usernameList[solIdx]);
             fetchPlayer(usernameList[solIdx]).then((sol: PlayerProps) => {
                 setSolutionProps(sol);
