@@ -33,12 +33,18 @@ function PlayerDataGame() {
     const [shareConfirmation, setShareConfirmation] = useState<string>("");
 
     const fetchPlayer = async (username: string) => {
-        const res: AxiosResponse = await axios.get(`/api/players/${username}`);
+        const res: AxiosResponse = await axios.get(
+            `https://osuplayerdle-backend.onrender.com/players/${username}`
+        );
+        console.log(res);
         return res.data[0];
     };
 
     const fetchPlayers = async () => {
-        const res: AxiosResponse = await axios.get("/api/players");
+        const res: AxiosResponse = await axios.get(
+            "https://osuplayerdle-backend.onrender.com/players"
+        );
+        console.log(res);
         return res.data;
     };
 
