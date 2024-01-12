@@ -57,14 +57,14 @@ function PlayerDataGame() {
                 usernameList.length,
                 curDay.getFullYear() * 365 +
                     curDay.getMonth() * 28 +
-                    curDay.getDay()
+                    curDay.getDate()
             ); // choose a solution out of the username list based on user's local day
             setSolution(usernameList[solIdx]);
             fetchPlayer(usernameList[solIdx]).then((sol: PlayerProps) => {
                 setSolutionProps(sol);
+                setIsLoading(false);
             });
         });
-        setIsLoading(false);
     }, []);
 
     const handleInputSubmit = (inputText: string) => {
