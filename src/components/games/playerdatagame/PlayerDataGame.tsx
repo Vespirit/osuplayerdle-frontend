@@ -51,11 +51,14 @@ function PlayerDataGame() {
     useEffect(() => {
         fetchPlayers().then((usernameList: string[]) => {
             setUsernames(usernameList);
+            const curDay: Date = startOfToday();
             const solIdx: number = getRandomInt(
                 0,
                 usernameList.length,
-                startOfToday().getTime()
-            ); // choose a solution out of the username list
+                curDay.getFullYear() * 365 +
+                    curDay.getMonth() * 28 +
+                    curDay.getDay()
+            ); // choose a solution out of the username list based on user's local day
             setSolution(usernameList[solIdx]);
             fetchPlayer(usernameList[solIdx]).then((sol: PlayerProps) => {
                 setSolutionProps(sol);
