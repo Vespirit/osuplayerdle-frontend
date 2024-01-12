@@ -105,7 +105,7 @@ function PlayerDataGame() {
                 guessHints.reduce(
                     (acc, guessHint) => acc + guessHint.join("") + "\n",
                     "osu!playerdle results\n"
-                ) + "Play at <url>"
+                ) + "Play at osuplayerdle.vercel.app/"
             )
             .then(() => {
                 setShareConfirmation("Results copied to clipboard.");
